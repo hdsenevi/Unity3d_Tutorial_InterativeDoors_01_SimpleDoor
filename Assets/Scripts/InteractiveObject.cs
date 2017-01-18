@@ -19,17 +19,17 @@ public class InteractiveObject : MonoBehaviour
 	
  	public void TrigegrInteraction()
 	{
-		if(!animation.isPlaying)
+		if(!GetComponent<Animation>().isPlaying)
 			{
 			Debug.Log("Interactive object");
 			switch (m_state) 
 			{
 			case eInteractiveState.Active:
-				animation.Play("Close");
+				GetComponent<Animation>().Play("Close");
 				m_state = eInteractiveState.Inactive;
 				break;
 			case eInteractiveState.Inactive:
-				animation.Play("Open");
+				GetComponent<Animation>().Play("Open");
 				m_state = eInteractiveState.Active;
 				break;
 			default:
